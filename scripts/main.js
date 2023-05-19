@@ -23,13 +23,14 @@ const render = async () => {
                 ${interiorOptionsHTML}
             </section>
 
-            <section class="choices__wheel options">
-                <h2>Wheels</h2>
-                ${wheelOptionsHTML}
-            </section>
             <section class="choices__tech options">
                 <h2>Technologies</h2>
                 ${techOptionsHTML}
+            </section>
+
+            <section class="choices__wheel options">
+                <h2>Wheels</h2>
+                ${wheelOptionsHTML}
             </section>
         </article>
 

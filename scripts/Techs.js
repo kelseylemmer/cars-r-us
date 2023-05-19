@@ -1,4 +1,15 @@
+import { setTechChoice } from "./TransientState.js"
+
+const handleTechChoice = (changeEvent) => {
+    if (changeEvent.target.id === "tech") {
+        const convertedToInteger = parseInt(changeEvent.target.value)
+        setTechChoice(convertedToInteger)
+    }
+}
+
 export const TechOptions = async () => {
+
+    document.addEventListener("change", handleTechChoice)
 
     const response = await fetch("http://localhost:8088/techs")
     const techs = await response.json()
