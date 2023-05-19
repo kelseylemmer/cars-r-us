@@ -2,7 +2,7 @@
 const transientState = {
     "paintId": 0,
     "interiorId": 0,
-    "techId": 0,
+    "packageId": 0,
     "wheelId": 0
 }
 
@@ -17,8 +17,8 @@ export const setInteriorChoice = (chosenInterior) => {
     console.log(transientState)
 }
 
-export const setTechChoice = (chosenTech) => {
-    transientState.techId = chosenTech
+export const setPackageChoice = (chosenPackage) => {
+    transientState.packageId = chosenPackage
     console.log(transientState)
 }
 
@@ -27,3 +27,17 @@ export const setWheelChoice = (chosenWheel) => {
     console.log(transientState)
 }
 
+// Function to convert transient state to permanent state
+export const saveOrderSubmission = async () => {
+    const postOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(transientState)
+    }
+
+    const response = await fetch('  http://localhost:8088/orders', postOptions)
+    const customEvent = new CustomEvent("newOrderCreated")
+    document.dispatchEvent(customEvent)
+}
