@@ -1,5 +1,5 @@
 {
-    "patints": [
+    "paints": [
         {
             "id": 1,
             "color": "Silver",
@@ -86,5 +86,6 @@
             "type": "18 in. Pair Spoke Black",
             "price": 400
         }
-    ]
+    ],
+    "orders": []
 }
